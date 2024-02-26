@@ -7,7 +7,7 @@
     "dev": "nuxt dev",
     "dev:https": "nuxt dev --https --ssl-cert cert.pem --ssl-key key.pem",
     "wrangler": "wrangler pages dev -- pnpm dev",
-    "wrangler:https": "wrangler pages dev --local-protocol=https -- pnpm dev:https",
+    "wrangler:https": "NODE_EXTRA_CA_CERTS=./cert.pem wrangler pages dev --local-protocol=https --https-key-path=./key.pem --https-cert-path=./cert.pem -- pnpm dev:https",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
